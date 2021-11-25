@@ -1,0 +1,54 @@
+@startuml
+skinparam classAttributeIconSize 0
+class MenyRegister {
+
+-ArrayList menyer<Meny>
+-ArrayList Retter<Rett>
+
++MenyRegister ()
+
++nyRett (String navn, String type, float pris, String oppskrift)
++finnRettNavn (String navn)
++finnRettType (String type)
++finnMenyIPrisklasse (float prisFra, float prisTil)
++nyMeny (ArrayList tilMeny)
++toString()
+}
+
+class Meny{
+-ArrayList Retter<Rett>
+
++Meny (ArrayList tilMeny)
+
++getRetter()
++totalPris()
++toString()
+}
+
+class Rett{
+-String navn
+-String type
+-String oppskrift
+-float pris
+
++Rett (String navn, String type, float pris, String oppskrift)
+
++getNavn ()
++getType ()
++getPris ()
++getOppskrift ()
++setNavn (String navn)
++setType (String type)
++setPris (float pris)
++setOppskrift (String oppskrift)
++toString()
+
+}
+
+MenyRegister *-- Rett:"1" "0...*"
+
+MenyRegister *-- Meny: "1" "0...*"
+
+Meny *-- Rett: "0" "0...*"
+
+@enduml

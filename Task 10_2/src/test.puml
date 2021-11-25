@@ -1,0 +1,7 @@
+@startuml
+
+Activate test
+create test2
+test -> test2
+
+@enduml

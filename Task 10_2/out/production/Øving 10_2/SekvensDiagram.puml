@@ -1,0 +1,45 @@
+@startuml
+activate Klient
+Klient -> MenyRegister: nyRett()
+activate MenyRegister
+MenyRegister -> Rett:getNavn()
+activate Rett
+Rett --> MenyRegister
+deactivate Rett
+MenyRegister --> Klient
+
+deactivate MenyRegister
+Klient -> MenyRegister:finnRettType()
+activate MenyRegister
+MenyRegister->Rett:getType()
+activate Rett
+Rett --> MenyRegister
+deactivate Rett
+MenyRegister --> Klient
+deactivate MenyRegister
+
+Klient -> MenyRegister:finnRettNavn()
+activate MenyRegister
+MenyRegister->Rett:getNavn()
+activate Rett
+Rett-->MenyRegister
+deactivate Rett
+MenyRegister-->Klient
+deactivate MenyRegister
+
+Klient->MenyRegister:nyMeny()
+activate MenyRegister
+MenyRegister-->Klient
+deactivate MenyRegister
+
+Klient->MenyRegister:finnMenyIPrisklasse()
+activate MenyRegister
+MenyRegister->Meny:totalPris()
+activate Meny
+Meny-->MenyRegister
+deactivate Meny
+MenyRegister-->Klient
+deactivate MenyRegister
+
+deactivate Klient
+@enduml

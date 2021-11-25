@@ -1,0 +1,21 @@
+@startuml
+activate PersonKlient
+PersonKlient -> ArbTaker : fulltNavn()
+activate ArbTaker
+ArbTaker -> Person : getEtternavn(), getFornavn()
+activate Person
+Person --> ArbTaker
+deactivate Person
+ArbTaker --> PersonKlient
+deactivate ArbTaker
+
+PersonKlient -> ArbTaker : alder(år)
+activate ArbTaker
+ArbTaker -> Person : getFødselsÅr()
+activate Person
+Person --> ArbTaker
+deactivate Person
+ArbTaker --> PersonKlient
+deactivate ArbTaker
+deactivate PersonKlient
+@enduml
