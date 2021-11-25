@@ -1,9 +1,0 @@
-@startuml
-activate Klient
-create EiendomRegister
-Klient -> EiendomRegister:new
-Klient-> EiendomRegister:lesEiendommer()
-activate EiendomRegister
-EiendomRegister-->Klient
-deactivate EiendomRegister
-@enduml
